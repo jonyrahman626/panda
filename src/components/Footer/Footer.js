@@ -18,7 +18,7 @@ class Footer extends Component {
                                         <li><a href="/">Twitter</a></li>
                                         <li><a href="/">Linkedin</a></li>
                                         <li><a href="/">Pinterest</a></li>
-                                        <li><a href="/">Pinterest</a></li>
+                                        <li><a href="/">Instagram</a></li>
                                     </ul>
                                 </div>
                             </div>
