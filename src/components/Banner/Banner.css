@@ -1,0 +1,118 @@
+.banner_item,
+.banner_item2,
+.banner_item3
+{
+    height: 675px;
+    background: url(../../images/banner_1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.banner_item2{
+    background: url(../../images/banner_2.jpg);
+}
+
+.banner_item3{
+    background: url(../../images/banner_3.jpg);
+}
+
+.banner_text{
+    padding-top: 95px;
+}
+
+.banner_text h6 {
+	color: #d9b257;
+	font-size: 16px;
+	font-weight: 500;
+	font-family: 'Montserrat Alternates', sans-serif;
+	padding-bottom: 10px;
+}
+
+.banner_text h1 {
+	color: #fff;
+	font-size: 54px;
+	font-weight: 500;
+	font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.banner_text h1 > span {
+	display: block;
+	font-weight: 700;
+	padding-top: 3px;
+}
+
+.banner_text a {
+	display: inline-block;
+	margin-top: 50px;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 500;
+	font-family: 'Montserrat Alternates', sans-serif;
+	position: relative;
+	z-index: 1;
+}
+
+.banner_text a span {
+	padding: 0 22px;
+	line-height: 48px;
+}
+
+.banner_text a i {
+	padding: 0 13px 0 20px;
+	line-height: 49px;
+	position: relative;
+}
+
+.banner_text a::after {
+	position: absolute;
+	content: '';
+	left: 0;
+	bottom: 0;
+	height: 3px;
+	width: 100%;
+	background: #d9b257;
+	transition: all linear .4s;
+	-webkit-transition: all linear .4s;
+	-moz-transition: all linear .4s;
+	-o-transition: all linear .4s;
+	-ms-transition: all linear .4s;
+	z-index: -1;
+}
+
+.banner_text a:hover::after {
+	height: 48px;
+}
+
+.banner_text a i::after {
+	position: absolute;
+	content: '';
+	left: 0;
+	bottom: -15px;
+	width: 2px;
+	height: 0px;
+	background: #222;
+	transform: rotate(12deg);
+	transition: all linear .37s;
+	-webkit-transition: all linear .37s;
+	-moz-transition: all linear .37s;
+	-o-transition: all linear .37s;
+	-ms-transition: all linear .37s;
+}
+
+.banner_text a:hover i::after {
+	height: 51px;
+}
+
+.banner_item {
+    position: relative;
+}
+
+.banner_item .overly,
+.banner_item2 .overly,
+.banner_item3 .overly{
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	padding: 95px 0 0 0;
+}

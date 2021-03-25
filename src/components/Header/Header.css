@@ -1,0 +1,55 @@
+/* ============================================
+              Header part start
+=============================================*/
+#header_part {
+	height: 100px;
+	background: #f1f1f1;
+}
+
+.logo img {
+  width: 60px;
+  margin-top: 10px;
+}
+
+.main_menu ul {
+  display: flex;
+}
+
+
+
+.main_menu ul li a {
+  color: #222;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  line-height: 100px;
+  margin: 0 12px;
+  text-transform: uppercase;
+}
+
+.header_search {
+  margin-top: 30px;
+}
+
+.header_search input {
+  width: 250px;
+  height: 40px;
+  border: 1px solid #222;
+  color: #222;
+  padding-left: 10px;
+  background: none;
+}
+
+
+.header_search button {
+  padding: 0 15px;
+  background: #222;
+  color: #fff;
+  font-size: 16px;
+  border: 0;
+  line-height: 40px;
+}
+
+/* ============================================
+              Header part end
+=============================================*/
