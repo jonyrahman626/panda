@@ -30,14 +30,9 @@ class App extends Component {
         ==================================================*/}
         <div className="content_blog">
           <div className="container">
-            <div className="row">
-              <div className="col-lg-12">
-                  <h1>Latest  Photos</h1>
-                  <div className="row">
-                    <LatestPhotos />
-                  </div>
+              <div className="row">
+                  <LatestPhotos />
               </div>
-            </div>
           </div>
         </div>
         {/*==================================================

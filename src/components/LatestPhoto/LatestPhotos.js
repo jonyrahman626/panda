@@ -36,6 +36,17 @@ class LatestPhotos extends Component {
         if(this.state.loading === false){
             return (
                 <React.Fragment>
+                    <div className="col-lg-6">
+                        <h1>Latest  Photos</h1>
+                    </div>
+                    <div className="col-lg-6 text-end">
+                        <div className="header_search">
+                            <form action="">
+                                <input type="text" placeholder="Search Here"/>
+                                <button type="submit">Search</button>
+                            </form>
+                        </div>
+                    </div>
                     {
                         this.state.photos.map((photo)=>(
                             <div key={photo.id} className="col-lg-4">
