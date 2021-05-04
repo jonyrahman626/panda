@@ -11,6 +11,7 @@ class LatestPhotos extends Component {
         searching: false,
     }
 
+    // Api photo loading start
     componentDidMount (){
         axios.get('https://api.unsplash.com/photos/?client_id=30lbu7849dnGgOlcluC9ufK-zLWHxdSaP2GtOpJD2IE&per_page=15&page='+this.state.page).then(
             res => this.setState({
@@ -18,9 +19,11 @@ class LatestPhotos extends Component {
                 loading: false,
                 page: this.state.page + 1,
             })
-        )
-    }
+            )
+        }
+    // Api photo loading end
 
+    // Next Page Loading start
     nextPage = (e)=>{
 
         axios.get('https://api.unsplash.com/photos/?client_id=30lbu7849dnGgOlcluC9ufK-zLWHxdSaP2GtOpJD2IE&per_page=15&page='+this.state.page).then(
@@ -32,14 +35,31 @@ class LatestPhotos extends Component {
         )
     }
 
+    // Next Page Loading start
+
+    // Search photo start
     searchQuery = (e) =>{
         this.setState({
             search_query: e.target.value,
         })
     }
 
-    
     searchTrigger = (e) => {
+        axios.get('https://api.unsplash.com/search/photos/?client_id=30lbu7849dnGgOlcluC9ufK-zLWHxdSaP2GtOpJD2IE&per_page=15&query='+ this.state.search_query +'&page='+this.state.page).then(
+            res => this.setState({
+                photos: res.data.results,
+                page: 2,
+                loading: false,
+                searching: true,
+                totalFound: res.data.total,
+            }) 
+        )
+
+        e.preventDefault();
+    }
+    // Search photo end
+
+    loadNextSearchPage = (e)=>{
         axios.get('https://api.unsplash.com/search/photos/?client_id=30lbu7849dnGgOlcluC9ufK-zLWHxdSaP2GtOpJD2IE&per_page=15&query='+ this.state.search_query +'&page='+this.state.page).then(
             res => this.setState({
                 photos: res.data.results,
@@ -48,19 +68,34 @@ class LatestPhotos extends Component {
                 searching: true,
             }) 
         )
-
-        e.preventDefault();
     }
     
 
     render() {
         // console.log(this.state.photos);
+
+        var searchHeading = ''; 
+        var searchBtnMarkup = '';
+        var searchInfo = '';
+
+        if(this.state.searching === true){
+            searchHeading = <h1>You Searched with <i>{this.state.search_query}</i></h1>
+            searchBtnMarkup = <button onClick={this.loadNextSearchPage}>Loading Page - {this.state.page}</button>
+            searchInfo = 'Total Found '
+        }
+
+        else{
+            searchHeading = <h1>Latest  Photos</h1>
+            searchBtnMarkup = <button onClick={this.nextPage}>Loading Page - {this.state.page}</button>
+            searchInfo = ''
+        }
+
         
         if(this.state.loading === false){
             return (
                 <React.Fragment>
                     <div className="col-lg-6">
-                        <h1>Latest  Photos</h1>
+                        {searchHeading}
                     </div>
                     <div className="col-lg-6 text-end">
                         <div className="header_search">
@@ -87,7 +122,7 @@ class LatestPhotos extends Component {
     
                     <div className="col-lg-12 text-center">
                         <div className="show_more">
-                            <button onClick={this.nextPage}>Loading Page - {this.state.page}</button>
+                            {searchBtnMarkup}
                         </div>
                     </div>
                 </React.Fragment>
