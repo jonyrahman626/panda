@@ -52,6 +52,7 @@ class LatestPhotos extends Component {
                 loading: false,
                 searching: true,
                 totalFound: res.data.total,
+                totalFoundPages: res.data.total_pages,
             }) 
         )
 
@@ -66,6 +67,8 @@ class LatestPhotos extends Component {
                 page: this.state.page + 1,
                 loading: false,
                 searching: true,
+                totalFound: res.data.total,
+                totalFoundPages: res.data.total_pages,
             }) 
         )
     }
@@ -81,7 +84,7 @@ class LatestPhotos extends Component {
         if(this.state.searching === true){
             searchHeading = <h1>You Searched with <i>{this.state.search_query}</i></h1>
             searchBtnMarkup = <button onClick={this.loadNextSearchPage}>Loading Page - {this.state.page}</button>
-            searchInfo = 'Total Found '
+            searchInfo = <span>Total Found {this.state.totalFound} | Page {this.state.page - 1} of {this.state.totalFoundPages} </span>
         }
 
         else{
@@ -95,7 +98,7 @@ class LatestPhotos extends Component {
             return (
                 <React.Fragment>
                     <div className="col-lg-6">
-                        {searchHeading}
+                        {searchHeading} {searchInfo}
                     </div>
                     <div className="col-lg-6 text-end">
                         <div className="header_search">
