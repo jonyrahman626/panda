@@ -1,51 +1,29 @@
 import React, { Component } from 'react';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Index from './components/pages/Index';
+import About from './components/pages/About';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import LatestPhotos from './components/LatestPhoto/LatestPhotos';
-import Banner from './components/Banner/Banner';
+
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        {/*==================================================
-                          Header Part start 
-        ==================================================*/}
+
         <Header />
-        {/*==================================================
-                          Header Part End 
-        ==================================================*/}
-
-        {/*==================================================
-                          Banner Part start 
-        ==================================================*/}
-        <Banner />
-        {/*==================================================
-                          Banner Part End 
-        ==================================================*/}
-
-        {/*==================================================
-                          Main Content Start 
-        ==================================================*/}
-        <div className="content_blog">
-          <div className="container">
-              <div className="row">
-                  <LatestPhotos />
-              </div>
-          </div>
-        </div>
-        {/*==================================================
-                          Main Content end 
-        ==================================================*/}
         
-        {/*==================================================
-                          Footer Part start 
-        ==================================================*/}
+        <Router>
+          <Switch>
+            <Route path="/" component={Index} />
+            <Route path="/about" component={About} />
+          </Switch>
+        </Router>
+        
+
         <Footer />
-        {/*==================================================
-                          Footer Part end 
-        ==================================================*/}
+
       </div>
     );
   }
