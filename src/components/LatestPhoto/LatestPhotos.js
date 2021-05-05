@@ -113,7 +113,7 @@ class LatestPhotos extends Component {
                         this.state.photos.map((photo)=>(
                             <div key={photo.id} className="col-lg-4">
                                 <div className="single_photo">
-                                    <a className="d-block" href="/">
+                                    <a className="d-block" href={'photo?id=' + photo.id}>
                                         <img className="w-100" height="300" src={photo.urls.small} alt={photo.alt_description}/>
                                         <h4>{photo.alt_description}</h4>
                                         <p>By - {photo.user.first_name} {photo.user.last_name}</p>
