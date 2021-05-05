@@ -13,7 +13,7 @@ class Header extends Component {
                         </div>
                         <div className="col-lg-10">
                             <div className="main_menu">
-                                <div className="justify-content-end">
+                                <div className="text-end">
                                     <Link to="/">Home</Link>
                                     <Link to="/about">About</Link>
                                     <Link to="/disclaimer">Disclaimer</Link>
