@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Index from './components/pages/Index';
 import About from './components/pages/About';
 import Photo from './components/Photo/Photo';
+import Disclaimer from './components/pages/Disclaimer';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
@@ -18,6 +19,7 @@ class App extends Component {
             <Route exact path="/" component={Index} />
             <Route exact path="/about" component={About} />
             <Route exact path="/photo" component={Photo} />
+            <Route exact path="/disclaimer" component={Disclaimer} />
           </Switch>
           <Footer />
         </Router>
