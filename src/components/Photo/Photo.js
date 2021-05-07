@@ -24,9 +24,23 @@ class Photo extends Component {
     render() {
 
         console.log(this.state.photo);
+        var photo = this.state.photo
         return (
             <div>
-                <h1>Single Photo Is Here</h1>
+                <section>
+                    <div className="container-fluid">
+                        <div className="single_photo">
+                            <h3>{photo.title}</h3>
+                            <p>{photo.alt_description}</p>
+                            <ul>
+                                <li><label htmlFor="uploadBy">Uploaded By</label> {photo.user.first_name} {photo.user.last_name}</li>
+                                <li><label htmlFor="upDate">Upload Date</label>{photo.updated_at}</li>
+                                <li><label htmlFor="cmModel">Camera Model</label>{photo.exif.model}</li>
+                            </ul>
+                        </div>
+                        <img src={photo.urls.full} alt="" />
+                    </div>
+                </section>
             </div>
         );
     }
