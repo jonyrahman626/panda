@@ -4,6 +4,7 @@ import Index from './components/pages/Index';
 import About from './components/pages/About';
 import Photo from './components/Photo/Photo';
 import Disclaimer from './components/pages/Disclaimer';
+import Credits from './components/pages/Credits';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
@@ -20,6 +21,7 @@ class App extends Component {
             <Route exact path="/about" component={About} />
             <Route exact path="/photo" component={Photo} />
             <Route exact path="/disclaimer" component={Disclaimer} />
+            <Route exact path="/credits" component={Credits} />
           </Switch>
           <Footer />
         </Router>
