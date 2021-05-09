@@ -29,12 +29,12 @@ class Photo extends Component {
         return (
             <div>
                 <section id="photo_part">
-                    <div className="container photo_cont">
-                    <div className="row">
+                    <div className="container">
+                        {photo.title ? <h3>{photo.title}</h3> : ''}
+                        {photo.alt_description ? <h4>{photo.alt_description}</h4> : ''}
+                        <div className="row photo_cont">
                             <div className="col-lg-12">
                                 <div className="single_photo_conmp">
-                                    {photo.title ? <h3>{photo.title}</h3> : ''}
-                                    {photo.alt_description ? <p>{photo.alt_description}</p> : ''}
                                     <ul>
                                         <li><label htmlFor="uploadBy">Uploaded By : </label> {photo.user && photo.user.first_name} {photo.user && photo.user.last_name}</li>
                                         <li><label htmlFor="upDate">Upload Date : </label> {photo.updated_at}</li>
