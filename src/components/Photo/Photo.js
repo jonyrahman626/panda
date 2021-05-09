@@ -28,11 +28,11 @@ class Photo extends Component {
         var photo = this.state.photo;
         return (
             <div>
-                <section>
+                <section id="photo_part">
                     <div className="container photo_cont">
                     <div className="row">
                             <div className="col-lg-12">
-                                <div className="single_photo">
+                                <div className="single_photo_conmp">
                                     {photo.title ? <h3>{photo.title}</h3> : ''}
                                     {photo.alt_description ? <p>{photo.alt_description}</p> : ''}
                                     <ul>
@@ -42,7 +42,7 @@ class Photo extends Component {
                                     </ul>
                                     <a href={photo.links && photo.links.download} download target="_blank">Download</a>
                                 </div>
-                                <img className="w-100" src={photo.urls && photo.urls.full} alt="" />
+                                <img className="w-100" height="800" src={photo.urls && photo.urls.full} alt="" />
                             </div>
                         </div>
                     </div>
