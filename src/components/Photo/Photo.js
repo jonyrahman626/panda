@@ -24,21 +24,22 @@ class Photo extends Component {
     render() {
 
         console.log(this.state.photo);
-        var photo = this.state.photo
+        var photo = this.state.photo;
         return (
             <div>
                 <section>
-                    <div className="container-fluid">
-                        <div className="row">
-                            <div className="col-lg-12 px-0">
+                    <div className="container">
+                    <div className="row">
+                            <div className="col-lg-12">
                                 <div className="single_photo">
                                     {photo.title ? <h3>{photo.title}</h3> : ''}
                                     {photo.alt_description ? <p>{photo.alt_description}</p> : ''}
                                     <ul>
-                                        <li><label htmlFor="uploadBy">Uploaded By</label> {photo.first_name ? photo.first_name : ''} {photo.last_name ? photo.last_name :  ''}</li>
+                                        <li><label htmlFor="uploadBy">Uploaded By</label> {photo.user && photo.user.first_name} {photo.user && photo.user.last_name}</li>
                                         <li><label htmlFor="upDate">Upload Date</label>{photo.updated_at}</li>
                                         <li><label htmlFor="cmModel">Camera Model</label>{photo.exif && photo.exif.model}</li>
                                     </ul>
+                                    <a href={photo.links && photo.links.download} download>Download</a>
                                 </div>
                                 <img className="w-100" src={photo.urls && photo.urls.full} alt="" />
                             </div>
