@@ -1,0 +1,42 @@
+.photo_cont{
+    position: relative;
+}
+
+.single_photo{
+    padding: 20px;
+    background: #fff;
+    position: absolute;
+    left: 30px;
+    top: 30px;
+}
+
+.single_photo h3{
+    color: #222;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.single_photo p{
+    color: #353535;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 0;
+}
+
+.single_photo ul li{
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.single_photo a{
+    padding: 10px 15px;
+    background: #222;
+    color: #fff;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: sans-serif;
+}
+
